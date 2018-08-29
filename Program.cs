@@ -1,29 +1,54 @@
-﻿// With the resulting List, populate a new List that contains each number squared. For example, if the original list is 2, 5, 3, 15, the final list will be 4, 25, 9, 225.
-
-// Then remove any number that is odd from the list of squared numbers.
-
-using System;
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
 
 namespace random
 {
-    // {public static void Display(List<int> allTheLists) => stringNumbers = string.Join(", ", allTheLists); Console.WriteLine(stringNumbers); Console.WriteLine();}
     class Program
     {
         static void Main(string[] args)
         {
+            Random RandomNumberGenerator = new Random();
+
+            List<int> randomNumbers = new List<int>();
+            for (int i = 0; i < 20; i++)
             {
-                Random RandomNumGenerator = new Random();
-
-                List<int> randomNumbers = new List<int>();
-
-                for (int i = 0; i < 20; i++)
-                {
-                    randomNumbers.Add(RandomNumGenerator.Next(1, 51));
-                    Console.WriteLine(randomNumbers[i]);
-                }
+                randomNumbers.Add(RandomNumberGenerator.Next(1, 51));
+                Console.WriteLine(randomNumbers[i]);
+                Console.WriteLine();
             }
+
+            List<int> squaredNumbers = new List<int>();
+            foreach (var number in randomNumbers)
+            {
+                squaredNumbers.Add(number * number);
+                Console.WriteLine($"{squaredNumbers[number]}");
+                Console.WriteLine();
+            }
+
+            List<int> oddlessNumbers = new List<int>();
+            squaredNumbers.RemoveAll(i => i % 2 == 0);
+            foreach (int squared in squaredNumbers)
+            {
+
+                Console.WriteLine($"{squared}");
+                Console.WriteLine();
+            }
+
         }
     }
 }
+
+
+
+
+
+
+// public void AddList(NumberList newList)
+// {
+//     randomNumbers.Add(newList);
+// }
+
+// public void DisplayLists(NumberList list) => string.Join(", ", randomNumbers);
+// Console.WriteLine($"{NumberList}"
+//     );
+//     Console.WriteLine();
