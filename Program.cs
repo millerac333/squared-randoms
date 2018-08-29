@@ -3,27 +3,27 @@
 // Then remove any number that is odd from the list of squared numbers.
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace random
 {
+    // {public static void Display(List<int> allTheLists) => stringNumbers = string.Join(", ", allTheLists); Console.WriteLine(stringNumbers); Console.WriteLine();}
     class Program
     {
         static void Main(string[] args)
         {
-            // Using the Random class, generate a list of 20 random numbers that are in the range of 1-50.
-            Random randomNumberGenerator = new Random();
-
-            // // Create a list
-            List<int> randomNumbers = new List<int>();
-
-            // // Populate the list
-            for (int number = 0; number <= 19; number++)
             {
-                randomNumbers.Add(randomNumberGenerator.Next(1, 51));
-                Console.WriteLine($"{randomNumbers[number]}");
-            }
+                Random RandomNumGenerator = new Random();
 
+                List<int> randomNumbers = new List<int>();
+
+                for (int i = 0; i < 20; i++)
+                {
+                    randomNumbers.Add(RandomNumGenerator.Next(1, 51));
+                    Console.WriteLine(randomNumbers[i]);
+                }
+            }
         }
     }
 }
