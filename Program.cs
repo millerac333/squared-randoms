@@ -10,7 +10,7 @@ namespace random
             Random RandomNumberGenerator = new Random();
 
             List<int> randomNumbers = new List<int>();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 19; i++)
             {
                 randomNumbers.Add(RandomNumberGenerator.Next(1, 51));
                 Console.WriteLine(randomNumbers[i]);
@@ -38,17 +38,3 @@ namespace random
     }
 }
 
-
-
-
-
-
-// public void AddList(NumberList newList)
-// {
-//     randomNumbers.Add(newList);
-// }
-
-// public void DisplayLists(NumberList list) => string.Join(", ", randomNumbers);
-// Console.WriteLine($"{NumberList}"
-//     );
-//     Console.WriteLine();
